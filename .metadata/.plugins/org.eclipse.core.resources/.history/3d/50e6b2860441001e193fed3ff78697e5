@@ -1,0 +1,180 @@
+package com.Project.Guru99.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class CustomerPage extends BasePage {
+
+	
+	public void navigateToNewCustomer() {
+		
+		WebElement NewCustomerButton = driver.findElement(By.xpath("//a[contains(text(),'New Customer')]"));
+		doClick(NewCustomerButton);
+		System.out.println("New Customer button is clicked");
+
+	}
+
+	public void enterCustomerName(String custName) {
+		
+		if(custName.isEmpty() || custName.isBlank() || custName==null) {
+			
+			driver.findElement(By.xpath("//input[@name='name']")).click();
+			selectFemaleRadioButton();
+		}
+		else{
+
+		driver.findElement(By.xpath("//input[@name='name']")).sendKeys(custName);
+		}
+	}
+	
+	
+	public void selectFemaleRadioButton() {
+
+		driver.findElement(By.xpath("//input[@value='f']")).click();
+	}
+	
+	/**
+	 * @author Venkatesh
+	 * @description : To Enter Address
+	 * @param address : it accepts alphabets
+	 */
+	public void enterAddress(String address) {
+		
+		if(address.isEmpty() || address.isBlank() || address==null) {
+			
+			driver.findElement(By.xpath("//textarea[@name='addr']")).click();
+			selectCity();
+		}
+		else{
+
+		driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys(address);
+		}
+	}
+	
+	public void selectCity() {
+
+		driver.findElement(By.xpath("//input[@name='city']")).click();
+	}
+	/**
+	 * @author Venkatesh
+	 * @description : To Enter City
+	 * @param address : it accepts alphabets
+	 */
+	public void enterCity(String city) {
+		
+		if(city.isEmpty() || city.isBlank() || city==null) {
+			
+			driver.findElement(By.xpath("//input[@name='city']")).click();
+			selectStatefield();
+			}
+		else{
+		driver.findElement(By.xpath("//input[@name='city']")).sendKeys(city);
+		}
+	}
+	
+	public void selectStatefield() {
+
+		driver.findElement(By.xpath("//input[@name='state']")).click();
+	}
+	
+	/**
+	 * @author Venkatesh
+	 * @description : To Enter State
+	 * @param address : it accepts alphabets
+	 */
+     public void enterState(String state) {
+		
+		if(state.isEmpty() || state.isBlank() || state==null) {
+			
+			driver.findElement(By.xpath("//input[@name='state']")).click();
+			selectPincode();
+		}
+		else{
+
+		driver.findElement(By.xpath("//input[@name='state']")).sendKeys(state);
+		}
+	}
+     
+	public void selectPincode() {
+
+		driver.findElement(By.xpath("//input[@name='pinno']")).click();
+	}	
+	
+	/**
+	 * @author Venkatesh
+	 * @description : To Enter PinNo
+	 * @param address : it accepts 6Digits numeric
+	 */
+	public void enterPinCode(String pincode) {
+		
+		if(pincode.isEmpty() || pincode.isBlank() ||pincode==null) {
+			
+			driver.findElement(By.xpath("//input[@name='pinno']")).click();
+			selectPincode();
+		}
+		if( pincode.length()>6 || pincode.length()<6) {
+			driver.findElement(By.xpath("//input[@name='pinno']")).sendKeys(pincode);
+		}
+		else{
+
+		driver.findElement(By.xpath("//input[@name='pinno']")).sendKeys(pincode);
+		}
+	}
+	
+	public void selectTelephone() {
+
+		driver.findElement(By.xpath("//input[@name='telephoneno']")).click();
+	}
+	
+	/**
+	 * @author Venkatesh
+	 * @description : To Enter Telephone No
+	 * @param address : it accepts 6Digits numeric
+	 */
+	public void enterTelephoneNo(String TelePhoneno) {
+		
+		if(TelePhoneno.isEmpty() || TelePhoneno.isBlank() ||TelePhoneno==null) {
+			
+			driver.findElement(By.xpath("//input[@name='telephoneno']")).click();
+			selectPincode();
+		}
+		if( TelePhoneno.length()>10 || TelePhoneno.length()<10) {
+			driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys(TelePhoneno);
+		}
+		else{
+
+		driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys(TelePhoneno);
+		}
+	}
+	
+	public void selectEmail() {
+
+		driver.findElement(By.xpath("//input[@name='emailid']")).click();
+	}
+	
+	/**
+	 * @author Venkatesh
+	 * @description : To Enter Telephone No
+	 * @param address : it accepts 6Digits numeric
+	 */
+	public void enterEmail(String Email) {
+		
+		if(Email.isEmpty() || Email.isBlank() ||Email==null) {
+			
+			driver.findElement(By.xpath("//input[@name='telephoneno']")).click();
+			selectPincode();
+		}
+		if( Email.length()>10 || Email.length()<10) {
+			driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys(Email);
+		}
+		else{
+
+		driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys(Email);
+		}
+	}
+	
+	public void selectSubmit() {
+
+		driver.findElement(By.xpath("//input[@value='Submit']")).click();
+	}
+}

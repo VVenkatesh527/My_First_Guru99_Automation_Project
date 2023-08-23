@@ -1,0 +1,41 @@
+package com.Project.Guru99.TestCases;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import com.Project.Guru99.Pages.BasePage;
+
+public class EditCustomerPage extends BasePage {
+
+	public void navigateToEditCustomer(){
+		
+		WebElement EditCustomerButton = driver.findElement(By.xpath("//a[@text='Edit Customer']"));
+		doClick(EditCustomerButton);
+	    System.out.println("Edit Customer Button Is Clicked");	
+	}
+	
+	public void enterCustomerId(String customerId) {
+
+		if (customerId.isEmpty() || customerId.isBlank() || customerId == null) {
+
+			driver.findElement(By.xpath("//input[@name='cusid']")).click();
+			clickOnAccSubmitButton();
+
+		} else {
+			driver.findElement(By.xpath("//input[@name='cusid']")).sendKeys(customerId);
+		}
+
+	}
+
+	public void clickOnAccSubmitButton() {
+
+		driver.findElement(By.xpath("//input[@value='Submit'and @name='AccSubmit']")).click();
+		sleep(2000);
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+	}
+	
+	
+	
+}

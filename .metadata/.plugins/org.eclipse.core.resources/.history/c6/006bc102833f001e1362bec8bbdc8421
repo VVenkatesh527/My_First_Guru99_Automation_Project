@@ -1,0 +1,21 @@
+package com.Project.Guru99.Pages;
+
+public class Constants extends BasePage{
+	
+	//Customer Name Field
+	public static final  String customer_name_blank_message = "Customer name must not be blank";
+	public static final  String customer_name_alphanumeric_message = "Numbers are not allowed";
+	public static final  String customer_name_special_character_message = "Special characters are not allowed";
+	public static final  String customer_name_FirstChar_blank_space_message = "Numbers are not allowed";
+	
+	public static final  String address_blank_message = "";//label id message3
+	public static final  String address_FirstChar_blank_space_message = "";
+	
+	public static final  String city_blank_message = "City Field must be not blank";//label id message4
+	public static final  String city_alphanumeric_message = "Numbers are not allowed";
+	public static final  String city_special_character_message = "Special characters are not allowed";
+	public static final  String city_FirstChar_blank_space_message = "Numbers are not allowed";
+	
+	
+
+}

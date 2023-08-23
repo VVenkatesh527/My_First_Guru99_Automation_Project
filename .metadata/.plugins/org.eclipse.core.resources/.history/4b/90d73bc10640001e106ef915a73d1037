@@ -1,0 +1,20 @@
+package com.java.properties.concepts;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class ReadPropertyFile {
+
+	public static void main(String[] args) {
+
+		
+		String filePath = System.getProperty("user.dir")+"\\venkatesh.properties";
+		System.out.println(filePath);
+		
+		FileInputStream inputstream = new FileInputStream("");
+		
+		Properties prop = new Properties();
+        //prop.load(null);
+		
+	}
+}

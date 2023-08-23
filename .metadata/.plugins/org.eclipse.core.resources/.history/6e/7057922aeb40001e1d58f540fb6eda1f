@@ -1,0 +1,10 @@
+package com.testng.demo.practice;
+
+public class practice_testng {
+
+	public static void main(String[] args) {
+		String str = "gaha123";
+		
+		System.out.println(str.length());
+	}
+}

@@ -1,0 +1,16 @@
+package com.java.properties.concepts;
+
+import java.util.Properties;
+
+public class ReadPropertyFile {
+
+	public static void main(String[] args) {
+
+		
+		Properties prop = new Properties();
+		String filePath = System.getProperty("user.dir")+"\\BDHFHHFenkatesh.properties";
+		System.out.println(filePath);
+		
+		
+	}
+}

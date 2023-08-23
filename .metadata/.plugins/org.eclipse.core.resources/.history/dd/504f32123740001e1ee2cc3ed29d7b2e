@@ -1,0 +1,43 @@
+package com.java.properties.concepts;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ReadPropertyFile {
+
+	public static FileInputStream inputstream = null;
+	
+	public static void main(String[] args) {
+
+		
+		String filePath = System.getProperty("user.dir")+"\\venkatesh.properties";
+		System.out.println(filePath);
+		
+		File file = new File(filePath);
+		System.out.println(" File Object ---> " +file);
+		
+		try {
+			inputstream	 = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		System.out.println("File InputStream ---> " +inputstream);
+		Properties prop = new Properties();
+		
+        try {
+			prop.load(inputstream);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Property Load  ---> " +prop);
+		String browser_value = prop.getProperty("browser");
+		String sit_v4_url = prop.getProperty("SIT_V4");
+		System.out.println(browser_value);
+        System.out.println(sit_v4_url);
+        System.out.println(prop.getProperty("test"));
+	}
+}

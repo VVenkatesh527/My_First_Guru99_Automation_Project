@@ -1,0 +1,11 @@
+package com.java.properties.concepts;
+
+public class ReadPropertyFile {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

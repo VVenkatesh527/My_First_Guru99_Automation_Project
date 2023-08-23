@@ -1,0 +1,12 @@
+package com.java.properties.concepts;
+
+public class readfileProperties {
+
+	public static void main(String[] args) {
+
+		String path  = System.getProperty("user.dir") + "\\venkatesh.properties";
+		System.out.println(path);
+		
+	}
+
+}
