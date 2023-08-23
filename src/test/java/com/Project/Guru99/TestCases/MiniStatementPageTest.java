@@ -21,7 +21,7 @@ public class MiniStatementPageTest extends BasePage {
 	@BeforeMethod
 	public void setup() {
 
-		driver = basePage.launchBrowser("chrome");
+		driver = basePage.launchBrowser(getProperty("browser"));
 		loginPage.loginGuruBankApp();
 		sleep(2000);
 	}
@@ -64,7 +64,7 @@ public class MiniStatementPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		miniStatementPage.enterAccountNo("123 45");
 		String mini_statement_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_blank_inbetween_space_message, mini_statement_error_message, "Characters are not allowed");
+		Assert.assertEquals(Constants.delete_account_blank_space_inbetween_message, mini_statement_error_message, "Characters are not allowed");
 		
 	}
 	
@@ -75,7 +75,7 @@ public class MiniStatementPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		miniStatementPage.enterAccountNo(" ");
 		String mini_statement_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_firstChar_blank_space_message, mini_statement_error_message, "Characters are not allowed");
+		Assert.assertEquals(Constants.delete_account_firstchar_blank_space_message, mini_statement_error_message, "Characters are not allowed");
 		
 	}
 	

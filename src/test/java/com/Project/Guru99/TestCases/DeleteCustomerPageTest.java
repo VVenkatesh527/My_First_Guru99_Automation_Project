@@ -63,7 +63,7 @@ public class DeleteCustomerPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteCustIdPage.enterCustomerId("123 45");
 		String customer_id_error_message = driver.findElement(By.id("message14")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_customer_blank_inbetween_space_message, customer_id_error_message, "No Error Message");
+		Assert.assertEquals(Constants.delete_customer_blank_space_inbetween_message, customer_id_error_message, "No Error Message");
 		
 	}
 	
@@ -74,7 +74,7 @@ public class DeleteCustomerPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteCustIdPage.enterCustomerId(" ");
 		String customer_id_error_message = driver.findElement(By.id("message14")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_customer_firstChar_blank_space_message, customer_id_error_message, "No Error Message");
+		Assert.assertEquals(Constants.delete_customer_firstchar_blank_space_message, customer_id_error_message, "No Error Message");
 		
 	}
 	

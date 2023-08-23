@@ -1,5 +1,11 @@
 package com.Project.Guru99.Pages;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,11 +13,29 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class BasePage {
+	
+	private static FileInputStream inputStream = null;
+	public static Properties prop = null;
+	
+	 private static  String ReadPropertyFile(String Browser) {
+		
+		 String filePath = System.getProperty("user.dir") + "\\guru99.properties";
+		 File file = new File(filePath);
+		 try {
+			inputStream = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+						e.printStackTrace();
+		}
+		 Properties prop = new Properties();
+		 try {
+			prop.load(inputStream);
+		} catch (IOException e) {
+				e.printStackTrace();
+		}
+		  return prop.getProperty(Browser); 
+		} 
 
 	public static WebDriver driver = null;
-	public static String bank_url = "https://demo.guru99.com/V4/index.php";
-	public static String username_value = "mngr519485";
-	public static String password_value = "Admin@123";
 
 	public WebDriver launchBrowser(String browser) {
 
@@ -27,7 +51,7 @@ public class BasePage {
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.get(bank_url);
+		driver.get(getProperty("SIT_V4"));
 
 		return driver;
 	}
@@ -67,8 +91,9 @@ public class BasePage {
 		return element.getAttribute("textContent");
 	}
 	
-	public void getProperty(String input) {
+	public String getProperty(String input) {
 		
-		
+		return ReadPropertyFile(input);
 	}
+	
 }

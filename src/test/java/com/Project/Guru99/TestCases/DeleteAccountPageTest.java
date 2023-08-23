@@ -63,7 +63,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo("123 45");
 		String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_blank_inbetween_space_message, delete_acc_error_message, "Characters are not allowed");
+		Assert.assertEquals(Constants.delete_account_blank_space_inbetween_message, delete_acc_error_message, "Characters are not allowed");
 		
 	}
 	
@@ -74,7 +74,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo(" ");
 		String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_firstChar_blank_space_message, delete_acc_error_message, "Characters are not allowed");
+		Assert.assertEquals(Constants.delete_account_firstchar_blank_space_message, delete_acc_error_message, "Characters are not allowed");
 		
 	}
 	
