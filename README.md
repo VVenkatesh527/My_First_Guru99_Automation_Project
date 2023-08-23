@@ -1,3 +1,1 @@
 # My_First_Guru99_Automation_Project
-# First_Guru99_Automation_Project
-# My_First_Guru99_Automation_Project
