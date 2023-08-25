@@ -1,11 +1,10 @@
 package com.Project.Guru99.TestCases;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import org.testng.AssertJUnit;
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
 import com.Project.Guru99.Pages.BasePage;
 import com.Project.Guru99.Pages.Constants;
 import com.Project.Guru99.Pages.DeleteAccountPage;
@@ -20,7 +19,7 @@ public class DeleteAccountPageTest extends BasePage {
 	@BeforeMethod
 	public void setup() {
 
-		driver = basePage.launchBrowser("chrome");
+		driver = basePage.launchBrowser(getGuru99Property("browser"));
 		loginPage.loginGuruBankApp();
 		sleep(2000);
 	}
@@ -32,7 +31,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo("");
 		String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_blank_message, delete_acc_error_message, "Account Number must not be blank");
+		AssertJUnit.assertEquals(Constants.delete_account_blank_message, delete_acc_error_message, "Account Number must not be blank");
 		
 	} 
 	
@@ -43,7 +42,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo("acdgu123");
 	String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-	Assert.assertEquals(Constants.delete_account_alphanumeric_message, delete_acc_error_message, "Characters are not allowed");
+	AssertJUnit.assertEquals(Constants.delete_account_alphanumeric_message, delete_acc_error_message, "Characters are not allowed");
 	
 	}
 	@Test(description = "Validate Delete Account Cannot Be Special Characters")
@@ -53,7 +52,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo("456123#$%");
 		String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_special_character_message, delete_acc_error_message, "Special characters are not allowed");
+		AssertJUnit.assertEquals(Constants.delete_account_special_character_message, delete_acc_error_message, "Special characters are not allowed");
 		
 	}
 	@Test(description = "Validate Delete Account Cannot Be Blank Spaces Inbetween")
@@ -63,7 +62,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo("123 45");
 		String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_blank_space_inbetween_message, delete_acc_error_message, "Characters are not allowed");
+		AssertJUnit.assertEquals(Constants.delete_account_blank_space_inbetween_message, delete_acc_error_message, "Characters are not allowed");
 		
 	}
 	
@@ -74,7 +73,7 @@ public class DeleteAccountPageTest extends BasePage {
 		switchToGuruFrame(driver);
 		deleteAccountPage.enterAccountNo(" ");
 		String delete_acc_error_message = driver.findElement(By.id("message2")).getAttribute("textContent");				
-		Assert.assertEquals(Constants.delete_account_firstchar_blank_space_message, delete_acc_error_message, "Characters are not allowed");
+		AssertJUnit.assertEquals(Constants.delete_account_firstchar_blank_space_message, delete_acc_error_message, "Characters are not allowed");
 		
 	}
 	
@@ -86,3 +85,4 @@ public class DeleteAccountPageTest extends BasePage {
 	
 	
 }
+

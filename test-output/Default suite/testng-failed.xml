@@ -6,8 +6,8 @@
       <class name="com.Project.Guru99.TestCases.CustomerPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="validate_customer_name_TC001"/>
           <include name="setup"/>
-          <include name="validate_customer_name_TC028"/>
         </methods>
       </class> <!-- com.Project.Guru99.TestCases.CustomerPageTest -->
     </classes>

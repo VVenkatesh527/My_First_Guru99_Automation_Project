@@ -47,11 +47,12 @@ public class Constants extends BasePage{
 	public static final String all_fields_submit_pop_message = "Your User id is wrong please provide correct userid" ;
 	
 	//Edit Customer Field
-	public static final  String custid_blank_message = "Customer ID is required";
-	public static final  String custid_alphanumeric_message = "Characters are not allowed";
-	public static final  String custid_special_character_message = "Special characters are not allowed";
-	public static final  String custid_valid_message = "";
-			
+	public static final  String edit_customer_blank_message = "Customer ID is required";
+	public static final  String edit_customer_alphanumeric_message = "Characters are not allowed";
+	public static final  String edit_customer_special_character_message = "Special characters are not allowed";
+	public static final  String edit_customer_firstchar_blank_space_message = "First character can not have space";
+	public static final  String edit_customer_blank_space_inbetween_message = "Characters are not allowed";
+	
 	//Verify Delete_Account(DA1-DA5)
 	public static final  String delete_account_blank_message = "Account Number must not be blank";//""//label id message4
 	public static final  String delete_account_alphanumeric_message = "Characters are not allowed";//"Acc123"
@@ -73,5 +74,20 @@ public class Constants extends BasePage{
 	public static final  String mini_statement_blank_space_inbetween_message = "Characters are not allowed";//12 312	
 	public static final  String mini_statement_firstchar_blank_space_message = "Characters are not allowed";
 	
+	//Edit Account Field
+		public static final  String edit_account_blank_message = "Account Number must not be blank";
+		public static final  String edit_account_alphanumeric_message = "Characters are not allowed";
+		public static final  String edit_account_special_character_message = "Special characters are not allowed";
+		public static final  String edit_account_firstchar_blank_space_message = "Characters are not allowed";
+		public static final  String edit_account_blank_space_inbetween_message = "Characters are not allowed";
+		
+		//Balance Enquiry
+		public static final  String balance_enquiry_blank_message = "Account Number must not be blank";
+		public static final  String balance_enquiry_alphanumeric_message = "Characters are not allowed";
+		public static final  String balance_enquiry_special_character_message = "Special characters are not allowed";
+		public static final  String balance_enquiry_firstchar_blank_space_message = "Characters are not allowed";
+		public static final  String balance_enquiry_blank_space_inbetween_message = "Characters are not allowed";
+		
+
 
 }

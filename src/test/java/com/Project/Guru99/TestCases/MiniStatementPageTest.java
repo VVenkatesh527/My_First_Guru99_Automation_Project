@@ -21,7 +21,7 @@ public class MiniStatementPageTest extends BasePage {
 	@BeforeMethod
 	public void setup() {
 
-		driver = basePage.launchBrowser(getProperty("browser"));
+		driver = basePage.launchBrowser(getGuru99Property("browser"));
 		loginPage.loginGuruBankApp();
 		sleep(2000);
 	}

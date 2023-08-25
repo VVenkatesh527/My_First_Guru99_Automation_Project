@@ -33,8 +33,8 @@ public class MiniStatementPage extends BasePage {
 
 		driver.findElement(By.xpath("//input[@value='Submit'and @name='AccSubmit']")).click();
 		sleep(2000);
-		Alert alert = driver.switchTo().alert();
-		alert.accept();
+//		Alert alert = driver.switchTo().alert();
+//		alert.accept();
 	}
 	
 	

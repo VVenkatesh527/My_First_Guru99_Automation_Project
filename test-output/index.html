@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\HP\AppData\Local\Temp\testng-eclipse--1257602091\testng-customsuite.xml</span>
+                    <span>C:\Users\HP\AppData\Local\Temp\testng-eclipse-636222624\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.Project.Guru99.TestCases.CustomerPageTest" class="method navigator-link" hash-for-method="validate_customer_name_TC028">validate_customer_name_TC028</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.Project.Guru99.TestCases.CustomerPageTest" class="method navigator-link" hash-for-method="validate_customer_name_TC001">validate_customer_name_TC001</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,18 +126,19 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validate_customer_name_TC028">
-                  </a> <!-- validate_customer_name_TC028 -->
-                  <span class="method-name">validate_customer_name_TC028</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;dismiss-button&apos;]/div/span&quot;}
-  (Session info: chrome=116.0.5845.97)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+                  <a name="validate_customer_name_TC001">
+                  </a> <!-- validate_customer_name_TC001 -->
+                  <span class="method-name">validate_customer_name_TC001</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=116.0.5845.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4a7c90bb978c371bd1c9f59c0e6f63ac, findElement {using=xpath, value=//div[@id=&apos;dismiss-button&apos;]/div/span}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.97, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\HP\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60199}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60199/devtoo..., se:cdpVersion: 116.0.5845.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4a7c90bb978c371bd1c9f59c0e6f63ac
+Command: [c1220fc5b045bbfdf2c9a2562d802491, isElementDisplayed {id=D6473ACC6CACB8572B51F0CAE96CCAC6_element_74}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.111, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\HP\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55468}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55468/devtoo..., se:cdpVersion: 116.0.5845.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c1220fc5b045bbfdf2c9a2562d802491)] -&gt; xpath: //div[@id=&apos;ad_position_box&apos;]//div[@id=&apos;dismiss-button&apos; or @class=&apos;btn skip&apos; or aria-label=&apos;Close ad&apos;]]
+Session ID: c1220fc5b045bbfdf2c9a2562d802491
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -148,12 +149,10 @@ Session ID: 4a7c90bb978c371bd1c9f59c0e6f63ac
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.Project.Guru99.Pages.BasePage.switchToGuruFrame(BasePage.java:73)
-	at com.Project.Guru99.TestCases.CustomerPageTest.validate_customer_name_TC028(CustomerPageTest.java:326)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:280)
+	at com.Project.Guru99.Pages.BasePage.switchToGuruFrame(BasePage.java:109)
+	at com.Project.Guru99.TestCases.CustomerPageTest.validate_customer_name_TC001(CustomerPageTest.java:32)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -183,7 +182,7 @@ Session ID: 4a7c90bb978c371bd1c9f59c0e6f63ac
 
 </div> <!-- stack-trace -->
                   <em>
-(Validate All Fields Of Add New Customer Form)                  </em>
+(Validate Customer Name Cannot Be Empty)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -191,7 +190,7 @@ Session ID: 4a7c90bb978c371bd1c9f59c0e6f63ac
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\HP\AppData\Local\Temp\testng-eclipse--1257602091\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\HP\AppData\Local\Temp\testng-eclipse-636222624\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -202,7 +201,7 @@ Session ID: 4a7c90bb978c371bd1c9f59c0e6f63ac
     &lt;classes&gt;
       &lt;class name=&quot;com.Project.Guru99.TestCases.CustomerPageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;validate_customer_name_TC028&quot;/&gt;
+          &lt;include name=&quot;validate_customer_name_TC001&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.Project.Guru99.TestCases.CustomerPageTest --&gt;
     &lt;/classes&gt;
@@ -246,14 +245,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validate_customer_name_TC028')
+data.setCell(0, 1, 'validate_customer_name_TC001')
 data.setCell(0, 2, 'com.Project.Guru99.TestCases.CustomerPageTest')
-data.setCell(0, 3, 194);
+data.setCell(0, 3, 26658);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 194 ms</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -274,59 +273,59 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.Project.Guru99.TestCases.CustomerPageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">validate_customer_name_TC012</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC002</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC024</span>
-                <br/>
                 <span class="ignored-method-name">validate_address_TC006</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC003</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC025</span>
                 <br/>
                 <span class="ignored-method-name">validate_customer_name_TC015</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC027</span>
+                <span class="ignored-method-name">validate_customer_name_TC025</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC017</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC007</span>
+                <span class="ignored-method-name">validate_customer_name_TC003</span>
                 <br/>
                 <span class="ignored-method-name">validate_customer_name_TC019</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC009</span>
+                <span class="ignored-method-name">validate_customer_name_TC007</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC021</span>
+                <span class="ignored-method-name">validate_customer_name_TC017</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC011</span>
+                <span class="ignored-method-name">validate_customer_name_TC027</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC023</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC001</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC013</span>
-                <br/>
-                <span class="ignored-method-name">validate_address_TC005</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC014</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC004</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC026</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC016</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC018</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC008</span>
-                <br/>
-                <span class="ignored-method-name">validate_customer_name_TC020</span>
+                <span class="ignored-method-name">validate_customer_name_TC022</span>
                 <br/>
                 <span class="ignored-method-name">validate_customer_name_TC010</span>
                 <br/>
-                <span class="ignored-method-name">validate_customer_name_TC022</span>
+                <span class="ignored-method-name">validate_customer_name_TC020</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC024</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC002</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC012</span>
+                <br/>
+                <span class="ignored-method-name">validate_address_TC005</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC026</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC004</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC014</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC008</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC018</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC028</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC016</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC009</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC011</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC021</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC013</span>
+                <br/>
+                <span class="ignored-method-name">validate_customer_name_TC023</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -346,12 +345,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">validate_customer_name_TC028</span>
-                <span class="method-start">10680 ms</span>
+                <span class="method-name">validate_customer_name_TC001</span>
+                <span class="method-start">11083 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10878 ms</span>
+                <span class="method-start">37757 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

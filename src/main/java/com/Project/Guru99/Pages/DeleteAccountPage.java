@@ -1,6 +1,5 @@
 package com.Project.Guru99.Pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -31,9 +30,9 @@ public class DeleteAccountPage extends BasePage {
 	public void clickOnAccSubmitButton() {
 
 		driver.findElement(By.xpath("//input[@value='Submit'and @name='AccSubmit']")).click();
-		sleep(2000);
-		Alert alert = driver.switchTo().alert();
-		alert.accept();
+		sleep(3000);
+//		Alert alert = driver.switchTo().alert();
+//		alert.accept();
 	}
 
 }

@@ -20,7 +20,7 @@ public class DeleteCustomerPageTest extends BasePage {
 	@BeforeMethod
 	public void setup() {
 
-		driver = basePage.launchBrowser("chrome");
+		driver = basePage.launchBrowser(getGuru99Property("browser"));
 		loginPage.loginGuruBankApp();
 		sleep(2000);
 	}

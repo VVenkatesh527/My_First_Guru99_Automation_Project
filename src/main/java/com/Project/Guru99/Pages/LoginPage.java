@@ -9,17 +9,17 @@ public class LoginPage extends BasePage {
 
 		WebElement userName = driver.findElement(By.xpath("//input[@name='uid']"));
 		WebElement passWord = driver.findElement(By.xpath("//input[@name='password']"));
-		WebElement loginBtn = driver.findElement(By.xpath("//input[@name='btnLogin']"));
+		WebElement loginBtn = driver.findElement(By.xpath("//input[@value='LOGIN' and @name='btnLogin']"));
 		
 		if (userName.isDisplayed()) {
 
-			System.out.println("Entering UserName in GuruBank Application  ----> " + getProperty("username"));
-			clearValueAndEnterText(userName, getProperty("username"));
+			System.out.println("Entering UserName in GuruBank Application  ----> " + getGuru99Property("username"));
+			clearValueAndEnterText(userName, getGuru99Property("username"));
 		}
 		if (passWord.isDisplayed()) {
 
-			System.out.println("Entering PassWord in GuruBank Application  ----> " +getProperty("password"));
-			clearValueAndEnterText(passWord, getProperty("password"));
+			System.out.println("Entering PassWord in GuruBank Application  ----> " +getGuru99Property("password"));
+			clearValueAndEnterText(passWord, getGuru99Property("password"));
 		}
 
 		if (loginBtn.isDisplayed()) {
