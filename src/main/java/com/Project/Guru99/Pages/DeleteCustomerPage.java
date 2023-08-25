@@ -1,6 +1,5 @@
 package com.Project.Guru99.Pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -23,7 +22,7 @@ public void navigateToDeleteCustomer() {
 				
 	    }
 	else{
-	     driver.findElement(By.xpath("//input[@name='name']")).sendKeys(custId);
+	     driver.findElement(By.xpath("//input[@name='cusid']")).sendKeys(custId);
 	   }
 	
     }
@@ -32,8 +31,8 @@ public void navigateToDeleteCustomer() {
 		
 		driver.findElement(By.xpath("//input[@type='submit' and @value='Submit']")).click();
 		sleep(2000);
-		Alert alert = driver.switchTo().alert();
-		alert.accept();
+//		Alert alert = driver.switchTo().alert();
+//		alert.accept();
 	}
 	
 
