@@ -13,13 +13,13 @@ public class LoginPage extends BasePage {
 		
 		if (userName.isDisplayed()) {
 
-			System.out.println("Entering UserName in GuruBank Application  ----> " + getGuru99Property("username"));
-			clearValueAndEnterText(userName, getGuru99Property("username"));
+			System.out.println("Entering UserName in GuruBank Application  ----> " + getInputProperty("username"));
+			clearValueAndEnterText(userName, getInputProperty("username"));
 		}
 		if (passWord.isDisplayed()) {
 
-			System.out.println("Entering PassWord in GuruBank Application  ----> " +getGuru99Property("password"));
-			clearValueAndEnterText(passWord, getGuru99Property("password"));
+			System.out.println("Entering PassWord in GuruBank Application  ----> " +getInputProperty("password"));
+			clearValueAndEnterText(passWord, getInputProperty("password"));
 		}
 
 		if (loginBtn.isDisplayed()) {
