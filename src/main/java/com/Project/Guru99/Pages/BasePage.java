@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -16,32 +16,42 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class BasePage {
-	
+
 	private static FileInputStream inputStream = null;
 	public static Properties prop = null;
-	
-	 private static  String readPropertyFile(String Browser) {
-		
-		 String filePath = System.getProperty("user.dir") + "\\guru99.properties";
-		 File file = new File(filePath);
-		 try {
+
+	private static Properties readPropertyFile() {
+
+		// here input as a parameter is not required ,
+		// because we are reading property file and return Properties object references
+
+		String filePath = System.getProperty("user.dir") + "//guru99.properties";
+		File file = new File(filePath);
+		try {
 			inputStream = new FileInputStream(file);
 		} catch (FileNotFoundException e) {
-						e.printStackTrace();
+			e.printStackTrace();
 		}
-		 Properties prop = new Properties();
-		 try {
+		Properties prop = new Properties();
+		try {
 			prop.load(inputStream);
 		} catch (IOException e) {
-				e.printStackTrace();
+			e.printStackTrace();
 		}
-		  return prop.getProperty(Browser); 
-		}
-	 
-	 public String getGuru99Property(String input) {
-			
-			return readPropertyFile(input);
-		}
+		return prop;
+	}
+
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
+	public String getInputProperty(String input) {
+		// Changing method to read any input from property file
+		Properties prop = readPropertyFile();
+		String property = prop.getProperty(input);
+		return property;
+	}
 
 	public static WebDriver driver = null;
 
@@ -59,19 +69,19 @@ public class BasePage {
 
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.get(getGuru99Property("SIT_V4"));
+		driver.get(getInputProperty("SIT_V4"));
 
 		return driver;
 	}
-	
+
 	public void clearValueAndEnterText(WebElement element, String text) {
-		
+
 		element.clear();
 		element.sendKeys(text);
 	}
-	
+
 	public static void doClick(WebElement element) {
-		
+
 		element.click();
 	}
 
@@ -84,58 +94,60 @@ public class BasePage {
 		}
 	}
 
-	public void switchToGuruFrame(WebDriver driver) {
-		
-		WebElement iframe_id = null;
-		WebElement iframe_2 = null;
-		System.out.println(" antest ");
-		
-		List<WebElement> frames = driver.findElements(By.tagName("iframe"));
-		if(frames.size()>=1) {
-			
-			iframe_id = driver.findElement(By.xpath("//iframe[@id='google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0']"));
-			sleep(500);
-			if(iframe_id.isDisplayed()) {
-				driver.switchTo().frame(iframe_id);
-				iframe_2 = driver.findElement(By.xpath("//div[@id='ad_position_box']//iframe[@id='ad_iframe' and @title='Advertisement' and @src='about:blank']"));
-				if(iframe_2.isDisplayed()) {
-					driver.switchTo().frame(iframe_2);
-					System.out.println("switching to frame2");
-					sleep(500);
-					driver.switchTo().parentFrame();
-					System.out.println(" test ");
-				}
-				WebElement dismissBtn = driver.findElement(By.xpath("//div[@id='ad_position_box']//div[@id='dismiss-button' or @class='btn skip' or aria-label='Close ad']"));
-				if(dismissBtn.isDisplayed()) {
-					JavascriptExecutor js = (JavascriptExecutor) driver;
-					js.executeScript("arguments[0].click();", dismissBtn);
-		         System.out.println("clicking on Dismiss button");
-				}
-				else
-		         {
-					System.out.println("unable to Click on Dismiss button");
-		         }
+	public boolean switchToGuruFrame(WebDriver driver) {
 
-			
+		boolean flag = false;
+		WebElement parent_frame = null, child_frame = null;
+		int counter = 1;
+		List<WebElement> number_of_iframes = driver.findElements(By.tagName("iframe"));
+		while (number_of_iframes.size() >= 1) {
+			try {
+				parent_frame = driver
+						.findElement(By.xpath("//iframe[@id='google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0']"));
+				sleep(500);
+				if (parent_frame.isDisplayed()) {
+					flag = true;
+					driver.switchTo().frame(parent_frame);
+					sleep(100);
+				} else {
+					flag = false;
+					System.out.println("Frame Is Not Displayed");
+					break;
+				}
+				child_frame = driver.findElement(By.xpath("//div[@id='ad_position_box']"
+						+ "//iframe[@id='ad_iframe' and @title='Advertisement' and @src='about:blank']"));
+				if (child_frame.isDisplayed()) {
+					driver.switchTo().frame(child_frame);
+				} else {
+					flag = false;
+					System.out.println("Child Frame Is Not Displayed");
+					break;
+				}
+				// if close button is displayed then no need to switch to parent frame.
+				// if cross mark is displayed then switch to parent frame.
+				
+				WebElement dismiss_or_close_button = driver
+						.findElement(By.xpath("//div[@id='dismiss-button' or aria-label='Close ad']"));
+				if (dismiss_or_close_button.isDisplayed()) {
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].click();", dismiss_or_close_button);
+					System.out.println("clicking on Close button");
+				}
+				if (flag == true) {
+					break;
+				}
+			} catch (NoSuchElementException e) {
+				e.printStackTrace();
 			}
-			}
+
+			counter++;
 		}
-//		
-//		if(frame.isDisplayed()) {
-//		driver.switchTo().frame(frame);
-//		WebElement frame1 = driver.findElement(By.id("ad_iframe"));
-//		if(frame1.isDisplayed()) {
-//		driver.switchTo().frame(frame1);
-//		sleep(2000);
-//							WebElement clickonclose = driver.findElement(By.xpath("//*[@id='dismiss-button']"));
-//		doClick(clickonclose);
-//		driver.switchTo().defaultContent();
-//		}
-		
-//		}
-//		driver.switchTo().defaultContent();
-//		sleep(1000);
+
+		if (counter >= 1) {
+			sleep(200);
+			driver.switchTo().defaultContent();
+		}
+
+		return flag;
 	}
-	
-	
-			
+}
