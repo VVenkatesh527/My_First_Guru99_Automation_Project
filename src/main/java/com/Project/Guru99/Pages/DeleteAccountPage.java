@@ -5,6 +5,11 @@ import org.openqa.selenium.WebElement;
 
 public class DeleteAccountPage extends BasePage {
 
+	/**
+	 * 1. for variables & methods camel case eg: testApp
+	 * 2. for class first character of each word should be upper case
+	 * 3. for package name you can use the format eg: com.project.guru99.Pages
+	 */
 	public void navigateToDeleteAccount() {
 
 		WebElement DeleteAccountButton = driver.findElement(By.xpath("//a[text()='Delete Account']"));
@@ -14,7 +19,7 @@ public class DeleteAccountPage extends BasePage {
 
 	}
 
-	public void enterAccountNo(String AccNo) {
+	public void enterAccountNo(String AccNo) { // here AccNo is variable, so you can declare variable as accNum like this
 
 		if (AccNo.isEmpty() || AccNo.isBlank() || AccNo == null) {
 
@@ -26,6 +31,7 @@ public class DeleteAccountPage extends BasePage {
 		}
 
 	}
+	// if the method is same then try to use only one method and keep it in base page , then you can use same method for all the test cases if required
 
 	public void clickOnAccSubmitButton() {
 

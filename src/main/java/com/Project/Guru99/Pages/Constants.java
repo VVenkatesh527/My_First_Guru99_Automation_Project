@@ -2,6 +2,12 @@ package com.Project.Guru99.Pages;
 
 public class Constants extends BasePage{
 	
+	/**
+	 * If the message is same for below variables, then you can use Map and store the key and values.
+	 * Eg : Map<String,String> data = new HashMap<String,String>();
+	 *    data.put("name_blank_message","Customer name must not be blank");
+	 */
+	
 	//New Customer Field(Customer Name)
 	public static final  String customer_name_blank_message = "Customer name must not be blank";
 	public static final  String customer_name_alphanumeric_message = "Numbers are not allowed";

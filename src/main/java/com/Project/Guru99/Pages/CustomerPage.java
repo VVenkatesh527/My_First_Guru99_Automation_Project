@@ -2,11 +2,12 @@ package com.Project.Guru99.Pages;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class CustomerPage extends BasePage {
 	
-	public static Alert alert = null;
+	public static Alert alert = null; // always maintain separate methods for alert, instead of declaring variables for alerts
 
 	
 	public void navigateToNewCustomer() {
@@ -156,15 +157,23 @@ public class CustomerPage extends BasePage {
 		}
 	}
 	
+	
+	// Instead of writing method for each button, you can create one re-usable method and pass parameter as webElement.
 	public void selectSubmit() {
 
-		driver.findElement(By.xpath("//input[@value='Submit']")).click();
+		WebElement submitBtn = driver.findElement(By.xpath("//input[@value='Submit']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", submitBtn);
+		sleep(200);
 		alert = driver.switchTo().alert();
-		
+		alert.accept();
+		System.out.println("Alert Accepted");
+
 	}
 	
 	public String addNewCustomer(String password) {
 		
+		// here data can be stored in property file and read the data from getInputProperty method
 		enterCustomerName("Admin");
 		driver.findElement(By.xpath("//input[@value='f']")).click();
 		driver.findElement(By.name("dob")).sendKeys("05-08-1991");
@@ -177,7 +186,7 @@ public class CustomerPage extends BasePage {
 		driver.findElement(By.name("password")).sendKeys(password);
 		selectSubmit();
 		String popMessage = alert.getText();
-		alert.accept();
+		//alert.accept();
 		
 		return popMessage;
 	}
