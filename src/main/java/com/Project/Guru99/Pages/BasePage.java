@@ -84,11 +84,13 @@ public class BasePage {
 
 		element.clear();
 		element.sendKeys(text);
+		// add SOP statements for entering data in text box
 	}
 
 	public static void doClick(WebElement element) {
 
 		element.click();
+		// add SOP statements for clicking webelemnts
 	}
 
 	public static void sleep(long seconds) {
@@ -129,6 +131,7 @@ public class BasePage {
 					System.out.println("Child Frame Is Not Displayed");
 					break;
 				}
+				
 				// if close button is displayed then no need to switch to parent frame.
 				// if cross mark is displayed then switch to parent frame.
 				
@@ -160,16 +163,15 @@ public class BasePage {
 	public  void takeSnapShot(){
 		
 		String getCurrentTimeStamp = getTimeStamp();
-		
 		String filePath = System.getProperty("user.dir")+"//Screenshots//"+getCurrentTimeStamp+".png";
 		System.out.println(filePath);
+		String filePath = System.getProperty("user.dir")+"//Screenshots//test.png";
 		TakesScreenshot scrShot =((TakesScreenshot)driver); // webdriver object converted to takesscreenshot
 		File sourceFile=scrShot.getScreenshotAs(OutputType.FILE); // image file generate
 		File destinationFile=new File(filePath); // string to file
 		try {
 			FileHandler.copy(sourceFile, destinationFile);
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		} // source file data moves to dest file
 	}
@@ -191,5 +193,8 @@ public class BasePage {
        
        return currenttimestamp;
 	}
-	
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // source file data moves to dest file
+		}
 }
