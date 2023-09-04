@@ -29,6 +29,7 @@ public class BalanceEnquiryPage extends BasePage {
 
 		driver.findElement(By.xpath("//input[@value='Submit'and @name='AccSubmit']")).click();
 		sleep(2000);
+		// try to use more SOP statements after clicking any button or webelements
 	}
 
 }

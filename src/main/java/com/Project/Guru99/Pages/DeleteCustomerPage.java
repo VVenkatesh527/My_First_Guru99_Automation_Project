@@ -26,7 +26,8 @@ public void navigateToDeleteCustomer() {
 	   }
 	
     }
-    
+	// if the method is same then try to use only one method and keep it in base page , then you can use same method for all the test cases if required
+
 	public void clickOnSubmitButton() {
 		
 		driver.findElement(By.xpath("//input[@type='submit' and @value='Submit']")).click();

@@ -24,6 +24,7 @@ package com.Project.Guru99.Pages;
 			}
 
 		}
+		// if the method is same then try to use only one method and keep it in base page , then you can use same method for all the test cases if required
 
 		public void clickOnSubmitButton() {
 
