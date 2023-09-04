@@ -1,6 +1,5 @@
 package com.Project.Guru99.Pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

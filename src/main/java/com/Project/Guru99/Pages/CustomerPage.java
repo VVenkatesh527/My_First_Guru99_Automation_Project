@@ -159,7 +159,7 @@ public class CustomerPage extends BasePage {
 	public void selectSubmit() {
 
 		driver.findElement(By.xpath("//input[@value='Submit']")).click();
-		alert = driver.switchTo().alert();
+		//alert = driver.switchTo().alert();
 		
 	}
 	

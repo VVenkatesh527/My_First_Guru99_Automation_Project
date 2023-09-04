@@ -25,7 +25,7 @@ public class CustomerPageTest extends BasePage {
 		sleep(2000);
 	}
 
-	@Test(description = "Validate Customer Name Cannot Be Empty")
+	@Test(groups={  "smoke"  }, description = "Validate Customer Name Cannot Be Empty")
 	public void validate_customer_name_TC001() {
 
 		customerPage.navigateToNewCustomer();
@@ -34,7 +34,7 @@ public class CustomerPageTest extends BasePage {
 		sleep(2000);
 		String customer_name_error_message = driver.findElement(By.id("message")).getAttribute("textContent");				
 		Assert.assertEquals(Constants.customer_name_blank_message, customer_name_error_message, "Customer Name Cannot Be Empty");
-		
+				
 	}
 	
 	@Test(description = "Validate Customer Name Cannot Be Numeric")
@@ -334,7 +334,8 @@ public class CustomerPageTest extends BasePage {
 		
 	@AfterMethod
 	public void tearDown() {
-
+		
+		takeSnapShot();
 		driver.quit();
 	}
 	

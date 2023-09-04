@@ -2,18 +2,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Guru99 TestAutomation Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Guru99 Automation Test Cases(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.Project.Guru99.TestCases.EditAccountPageTest">
+      <class name="com.Project.Guru99.TestCases.CustomerPageTest">
         <methods>
-          <include name="validate_edit_account_TC005"/>
-          <include name="setup"/>
-          <include name="validate_edit_account_TC001"/>
-          <include name="TearDown"/>
-          <include name="validate_edit_account_TC004"/>
-          <include name="validate_edit_account_TC002"/>
-          <include name="validate_edit_account_TC003"/>
+          <include name="validate_customer_name_TC001"/>
         </methods>
-      </class> <!-- com.Project.Guru99.TestCases.EditAccountPageTest -->
+      </class> <!-- com.Project.Guru99.TestCases.CustomerPageTest -->
     </classes>
   </test> <!-- Guru99 Automation Test Cases(failed) -->
 </suite> <!-- Failed suite [Guru99 TestAutomation Suite] -->

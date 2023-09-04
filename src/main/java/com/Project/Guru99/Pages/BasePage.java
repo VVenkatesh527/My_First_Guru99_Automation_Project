@@ -1,19 +1,25 @@
-package com.Project.Guru99.Pages;
+ package com.Project.Guru99.Pages;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.io.FileHandler;
 
 public class BasePage {
 
@@ -150,4 +156,40 @@ public class BasePage {
 
 		return flag;
 	}
+	
+	public  void takeSnapShot(){
+		
+		String getCurrentTimeStamp = getTimeStamp();
+		
+		String filePath = System.getProperty("user.dir")+"//Screenshots//"+getCurrentTimeStamp+".png";
+		System.out.println(filePath);
+		TakesScreenshot scrShot =((TakesScreenshot)driver); // webdriver object converted to takesscreenshot
+		File sourceFile=scrShot.getScreenshotAs(OutputType.FILE); // image file generate
+		File destinationFile=new File(filePath); // string to file
+		try {
+			FileHandler.copy(sourceFile, destinationFile);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		} // source file data moves to dest file
+	}
+	
+	public String getTimeStamp() {
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+		
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println(timestamp);                      // 2021-03-24 16:34:26.666
+
+        // method 2 - via Date
+        Date date = new Date();
+        System.out.println(new Timestamp(date.getTime()));  // 2021-03-24 16:34:26.666
+                                                            // number of milliseconds since January 1, 1970, 00:00:00 GMT
+        System.out.println(timestamp.getTime());   
+        
+       String  currenttimestamp = sdf2.format(timestamp);
+       
+       return currenttimestamp;
+	}
+	
 }

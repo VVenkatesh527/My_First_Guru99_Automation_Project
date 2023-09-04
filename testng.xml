@@ -2,8 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Guru99 TestAutomation Suite">
   <test name="Guru99 Automation Test Cases">
+	  <groups>
+		  <run>
+			  <include name="smoke"/>
+		  </run>
+	  </groups>
+	  
     <classes>
-		<class name="com.Project.Guru99.TestCases.EditAccountPageTest"/>
+		<class name="com.Project.Guru99.TestCases.CustomerPageTest"/>
     </classes>
   </test> <!-- Guru99 Automation Test Cases -->
 </suite> <!-- Guru99 TestAutomation Suite -->

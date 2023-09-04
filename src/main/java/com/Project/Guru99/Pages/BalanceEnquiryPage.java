@@ -7,7 +7,7 @@ public class BalanceEnquiryPage extends BasePage {
 
 	public void navigateToBalanceEnquiry(){
 		
-		WebElement EditCustomerButton = driver.findElement(By.xpath("//a[@text='Balance Enquiry']"));
+		WebElement EditCustomerButton = driver.findElement(By.xpath("//a[text()='Balance Enquiry']"));
 		doClick(EditCustomerButton);
 	    System.out.println("Balance Enquiry Button Is Clicked");	
 	}
